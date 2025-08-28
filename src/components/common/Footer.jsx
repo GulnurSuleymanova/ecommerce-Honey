@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <div>
-      <section className="w-full py-12 px-4 md:px-8 bg-top bg-repeat bgfooter">
+      <section className="w-full py-12 px-4 md:px-8 bg-top bg-repeat bgfooter mt-7">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-4">{t("footer.0")}</h2>
           <p className="mb-6 max-w-xl mx-auto">{t("footer.1")}</p>
