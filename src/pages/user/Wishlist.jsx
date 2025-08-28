@@ -12,18 +12,18 @@ const Wishlist = () => {
   const navigate = useNavigate();
 
   if (wishlist.length === 0) {
-    return <p className="text-center mt-10 text-lg">Wishlist boşdur</p>;
+    return <p className="text-center mt-10 text-lg">Wishlist is empty</p>;
   }
 
   const handleAddtocardClick = (e, product) => {
-    e.stopPropagation(); // məhsul kartına klikləyəndə details-ə yönlənməsin
+    e.stopPropagation(); // prevent navigation to details when clicking add to cart
 
     const isInAddtocard = addtocard.some((item) => item.id === product.id);
     if (!isInAddtocard) {
       toggleAddtocard(product);
-      toast.success(`"${product.name}" səbətə əlavə olundu.`);
+      toast.success(`"${product.name}" added to cart.`);
     } else {
-      toast.info(`"${product.name}" artıq səbətdə var.`);
+      toast.info(`"${product.name}" is already in the cart.`);
     }
   };
 
@@ -51,7 +51,8 @@ const Wishlist = () => {
             <div
               key={product.id}
               onClick={() => handleProductClick(product.id)}
-          className="flex items-center justify-between border-l border-l-amber-400 border-r border-r-amber-400 hover:border-amber-400 hover:border rounded-lg p-4 cursor-pointer" >
+              className="flex items-center justify-between border-l border-l-amber-400 border-r border-r-amber-400 hover:border-amber-400 hover:border rounded-lg p-4 cursor-pointer"
+            >
               <div className="flex items-center gap-4">
                 <img
                   src={product.images?.[0]?.url}
@@ -70,8 +71,8 @@ const Wishlist = () => {
                   onClick={(e) => handleAddtocardClick(e, product)}
                   title={
                     addtocard.some((item) => item.id === product.id)
-                      ? "Artıq səbətdədir"
-                      : "Səbətə əlavə et"
+                      ? "Already in cart"
+                      : "Add to cart"
                   }
                 >
                   <ShoppingCart className="w-5 h-5" />
@@ -83,7 +84,7 @@ const Wishlist = () => {
                     e.stopPropagation();
                     removeFromWishlist(product.id);
                   }}
-                  title="Wishlist-dən sil"
+                  title="Remove from wishlist"
                 >
                   &times;
                 </button>

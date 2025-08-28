@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAddtocard } from "../../context/AddtocardContext";
-import bgImage from "../../assets/slide4.webp";
+import bgImage from "../../assets/slide4-1.webp";
 import bee from "../../assets/icon-footer.png";
+import CheckoutModal from "./CheckoutModal";
 
 const cleanPrice = (price) =>
   typeof price === "number" ? price : +String(price).replace(/[^\d.-]/g, "") || 0;
@@ -14,6 +15,7 @@ const toAZN = (value) =>
 
 const Addtocard = () => {
   const { addtocard, removeFromAddtocard, updateQuantity } = useAddtocard();
+  const [isModalOpen, setIsModalOpen] = useState(false); // ✅ Modal state
 
   if (!addtocard.length) {
     return (
@@ -31,6 +33,7 @@ const Addtocard = () => {
 
   return (
     <>
+      {/* Hero */}
       <section
         className="h-[400px] bg-cover bg-center -mt-30"
         style={{ backgroundImage: `url(${bgImage})` }}
@@ -44,7 +47,9 @@ const Addtocard = () => {
       </section>
 
       <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left */}
         <div className="lg:col-span-2">
+          {/* Table */}
           <div className="overflow-x-auto rounded-xl border border-amber-400">
             <table className="w-full text-left">
               <thead className="bg-amber-50 text-sm font-medium tracking-wide text-amber-700 uppercase">
@@ -73,9 +78,7 @@ const Addtocard = () => {
                           alt={p.name}
                           className="w-16 h-16 object-cover rounded-lg border border-amber-300"
                         />
-                        <span className="font-medium tracking-wide">
-                          {p.name}
-                        </span>
+                        <span className="font-medium tracking-wide">{p.name}</span>
                       </td>
                       <td className="p-4">{toAZN(price)}</td>
                       <td className="p-4">
@@ -96,9 +99,7 @@ const Addtocard = () => {
                           </button>
                         </div>
                       </td>
-                      <td className="p-4 text-amber-700 font-semibold">
-                        {toAZN(lineTotal)}
-                      </td>
+                      <td className="p-4 text-amber-700 font-semibold">{toAZN(lineTotal)}</td>
                       <td className="p-4">
                         <button
                           onClick={() => removeFromAddtocard(p.id)}
@@ -130,20 +131,24 @@ const Addtocard = () => {
 
         {/* Right side */}
         <div className="bg-amber-50 rounded-xl border border-amber-400 p-6 h-fit">
-          <h2 className="text-xl font-medium mb-4 text-amber-800">
-            Cart Summary
-          </h2>
+          <h2 className="text-xl font-medium mb-4 text-amber-800">Cart Summary</h2>
 
           <div className="flex justify-between py-2 border-b border-amber-300 mt-4">
             <span>Subtotal:</span>
             <span className="text-amber-700 font-semibold">{toAZN(total)}</span>
           </div>
 
-          <button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 rounded-lg mt-6 transition-all duration-200 hover:scale-105 active:scale-95 shadow-md">
+          <button
+            onClick={() => setIsModalOpen(true)} // ✅ Open modal
+            className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 rounded-lg mt-6 transition-all duration-200 hover:scale-105 active:scale-95 shadow-md"
+          >
             Proceed to Checkout
           </button>
         </div>
       </div>
+
+      {/* Modal */}
+      <CheckoutModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 };
