@@ -14,12 +14,14 @@ import { toast } from "react-toastify";
 import { useAddtocard } from "../../context/AddtocardContext";
 import loader from "../../assets/loader.gif"
 import ShopFilterBar from "./ShopFilterBar";
+
 const Shop = () => {
   const { toggleWishlist, wishlist } = useWishlist();
   const { toggleAddtocard, addtocard } = useAddtocard();
 
   const { data: categoryData = [], isLoading: isCategoryLoading } = useGetCategoriesQuery();
   const { data: productData = [], isLoading: isProductLoading } = useGetAllProductQuery();
+
   const [viewType, setViewType] = useState("grid_3"); // grid_3 default
   const [sortType, setSortType] = useState("default"); // default sorting
 
@@ -136,12 +138,12 @@ const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
         </div>
       </section>
 
-      <section className="flex justify-center items-center gap-6 py-12 -mt-30 flex-wrap">
+      <section className="flex justify-center items-center gap-4 sm:gap-6 py-12 -mt-30 flex-wrap">
         {[shopslider1, shopslider2, shopslider3, shopslider4, shopslider5, shopslider6].map(
           (img, index) => (
             <div
               key={index}
-              className="w-32 h-32 rounded-full overflow-hidden shadow-md hover:scale-105 transition-all"
+              className="w-20 h-20 sm:w-32 sm:h-32 rounded-full overflow-hidden shadow-md hover:scale-105 transition-all"
             >
               <img className="w-full h-full object-cover" src={img} alt={`Shop ${index}`} />
             </div>
@@ -149,8 +151,8 @@ const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
         )}
       </section>
 
-      <section className="flex">
-        <div className="shop_filters mx-20 w-1/6">
+      <section className="flex flex-col lg:flex-row px-4 lg:px-20">
+        <div className="shop_filters w-full lg:w-1/6 mb-6 lg:mb-0">
           {/* Search */}
           <div className="mb-6 max-w-md mx-auto relative">
             <input
@@ -199,7 +201,6 @@ const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
           </div>
 
           {/* Price, Sizes, Colors */}
-          {/* Burada əvvəlki kod dəyişməz */}
           {/* Price filter */}
           <div className="mb-6 border-[#7A3E1C] rounded-3xl border-2 p-6 my-10">
             <h5 className="text-xl font-semibold tracking-wide cursor-pointer flex justify-between items-center pb-4 select-none">
@@ -306,22 +307,21 @@ const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
         </div>
 
         {/* Products */}
-        <div className="w-4/5 mr-30 mb-10">
-<ShopFilterBar
-  viewType={viewType}
-  setViewType={setViewType}
-  sortBy={sortType}
-  setSortBy={setSortType}
-  filteredCount={filteredProducts.length}
-  totalCount={productData.length}
-/>
-
+        <div className="w-full lg:w-5/6 ">
+          <ShopFilterBar
+            viewType={viewType}
+            setViewType={setViewType}
+            sortBy={sortType}
+            setSortBy={setSortType}
+            filteredCount={filteredProducts.length}
+            totalCount={productData.length}
+          />
 
           {isProductLoading ? (
             <p className="text-gray-600 text-center text-lg"><img src={loader} alt="" /></p>
           ) : (
             <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-7">
                 {currentProducts.map((product, index) => (
                   <div key={product._id || product.id || index} onClick={() => openDetails(product)} className="group rounded-3xl overflow-hidden shadow-lg cursor-pointer border-2 border-transparent border-r-amber-400 border-l-amber-400 hover:border-amber-400 ">
                     <div className="relative aspect-[4/3] overflow-hidden p-4 bg-white">
@@ -334,9 +334,9 @@ const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
                         <Heart className={`w-5 h-5 transition-all duration-200 ${wishlist.some((item) => item.id === product.id) ? "text-red-500 fill-red-500" : "text-amber-700 hover:text-red-500 hover:fill-red-500"}`} />
                       </div>
                     </div>
-                    <div className="p-6">
+                    <div className="p-4 sm:p-6">
                       <div className="mb-4">
-                        <h3 className="font-bold text-xl  mb-2 ">{product.name}</h3>
+                        <h3 className="font-bold text-lg sm:text-xl mb-2">{product.name}</h3>
                         <div className="flex items-center gap-1 mb-3">
                           <div className="flex">
                             {[...Array(5)].map((_, i) => (
@@ -349,7 +349,7 @@ const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-2xl font-bold text-amber-600">{product.price} AZN</span>
-                          <button className="w-12 h-12 bg-amber-600 hover:bg-amber-700 rounded-2xl flex items-center justify-center text-white transition-all duration-200 hover:scale-110 active:scale-95 shadow-lg hover:shadow-xl" 
+                          <button className="w-10 h-10 sm:w-12 sm:h-12 bg-amber-600 hover:bg-amber-700 rounded-2xl flex items-center justify-center text-white transition-all duration-200 hover:scale-110 active:scale-95 shadow-lg hover:shadow-xl" 
                             onClick={(e) => handleAddtocardClick(e, product)}
                             title={addtocard.some((item) => item.id === product.id) ? "Remove from addtocard" : "Add to addtocard"}
                           >
@@ -363,11 +363,11 @@ const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
               </div>
 
               {/* Pagination */}
-              <div className="flex justify-center items-center gap-3 mt-6">
+              <div className="flex flex-wrap justify-center items-center gap-2 mt-4 sm:gap-3 sm:mt-6">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                   <button
                     key={page}
-                    className={`px-4 py-2 rounded-lg font-medium ${page === currentPage ? "bg-amber-600 text-white" : "bg-gray-200 "}`}
+                    className={`px-3 sm:px-4 py-2 rounded-lg font-medium ${page === currentPage ? "bg-amber-600 text-white" : "bg-gray-200 "}`}
                     onClick={() => setCurrentPage(page)}
                   >
                     {page}

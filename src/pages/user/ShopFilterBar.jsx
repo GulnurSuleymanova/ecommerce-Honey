@@ -19,7 +19,7 @@ const ShopFilterBar = ({
   ];
 
   return (
-    <div className="flex justify-end items-center mb-6 flex-wrap">
+    <div className="flex justify-end items-center mb-6 flex-wrap pr-8">
       <div>
         <select
           className="h-[46px] min-w-[165px] px-4  border-gray-300 cursor-pointer text-sm font-medium  border rounded-2xl"
