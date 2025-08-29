@@ -15,7 +15,7 @@ const toAZN = (value) =>
 
 const Addtocard = () => {
   const { addtocard, removeFromAddtocard, updateQuantity } = useAddtocard();
-  const [isModalOpen, setIsModalOpen] = useState(false); // ✅ Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   if (!addtocard.length) {
     return (
@@ -33,7 +33,6 @@ const Addtocard = () => {
 
   return (
     <>
-      {/* Hero */}
       <section
         className="h-[400px] bg-cover bg-center -mt-30"
         style={{ backgroundImage: `url(${bgImage})` }}
@@ -47,9 +46,7 @@ const Addtocard = () => {
       </section>
 
       <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left */}
         <div className="lg:col-span-2">
-          {/* Table */}
           <div className="overflow-x-auto rounded-xl border border-amber-400">
             <table className="w-full text-left">
               <thead className="bg-amber-50 text-sm font-medium tracking-wide text-amber-700 uppercase">
@@ -116,7 +113,6 @@ const Addtocard = () => {
             </table>
           </div>
 
-          {/* Coupon */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
             <input
               type="text"
@@ -129,7 +125,6 @@ const Addtocard = () => {
           </div>
         </div>
 
-        {/* Right side */}
         <div className="bg-amber-50 rounded-xl border border-amber-400 p-6 h-fit">
           <h2 className="text-xl font-medium mb-4 text-amber-800">Cart Summary</h2>
 
@@ -139,7 +134,7 @@ const Addtocard = () => {
           </div>
 
           <button
-            onClick={() => setIsModalOpen(true)} // ✅ Open modal
+            onClick={() => setIsModalOpen(true)}
             className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 rounded-lg mt-6 transition-all duration-200 hover:scale-105 active:scale-95 shadow-md"
           >
             Proceed to Checkout

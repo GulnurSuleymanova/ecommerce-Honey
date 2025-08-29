@@ -7,7 +7,6 @@ const PBenefit = () => {
   const benefitsLeft = t("benefits.left", { returnObjects: true });
   const benefitsRight = t("benefits.right", { returnObjects: true });
 
-  // Hər iki tərəfdən bütün benefits birləşdirilir və 1-dən 6-ya qədər number verilir
   const allBenefits = [...benefitsLeft, ...benefitsRight].map((item, index) => ({
     ...item,
     number: index + 1,
@@ -16,17 +15,14 @@ const PBenefit = () => {
   return (
     <div className="py-5 relative">
       <div className="container mx-auto px-4 sm:px-6">
-        {/* Başlıq */}
         <div className="text-center">
           <h6 className="text-[24px] sm:text-[28px] font-semibold mt-3">{t("benefits.sectionTitle")}</h6>
           <h5 className="text-[32px] sm:text-[45px] font-bold pt-3">{t("benefits.sectionSubtitle")}</h5>
           <p className="pt-3 max-w-[600px] mx-auto text-[14px] sm:text-base">{t("benefits.description")}</p>
         </div>
 
-        {/* Desktop layout */}
         <div className="hidden sm:flex flex-row justify-between items-start pt-8 lg:pt-10 gap-6 lg:gap-10">
 
-          {/* Left benefits */}
           <div className="flex flex-col gap-12 lg:gap-20 w-full lg:w-1/3">
             {allBenefits.slice(0, 3).map((item) => (
               <div key={item.number} className="pt-4 flex items-center gap-3 lg:gap-5">
@@ -40,12 +36,10 @@ const PBenefit = () => {
             ))}
           </div>
 
-          {/* Center image */}
           <div className="w-full lg:w-1/2 flex justify-center items-center">
             <img src={img} alt="benefit" className="max-w-full h-auto" />
           </div>
 
-          {/* Right benefits */}
           <div className="flex flex-col gap-12 lg:gap-20 w-full lg:w-1/3">
             {allBenefits.slice(3, 6).map((item) => (
               <div key={item.number} className="pt-4 flex items-center gap-3 lg:gap-5">
@@ -61,7 +55,6 @@ const PBenefit = () => {
 
         </div>
 
-        {/* Mobile grid layout */}
         <div className="grid grid-cols-3 gap-3 sm:hidden w-full pt-6">
           {allBenefits.map((item) => (
             <div key={item.number} className="flex flex-col items-center gap-2">

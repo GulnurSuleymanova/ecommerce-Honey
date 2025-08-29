@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Sun, Moon } from "lucide-react"; // lucide-react ikonları
+import { Sun, Moon } from "lucide-react";
 
 const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(() => {

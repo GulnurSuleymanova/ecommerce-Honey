@@ -1,7 +1,5 @@
-// shopApi.js
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-// Token alma funksiyası
 const getToken = () => localStorage.getItem("token");
 
 export const shopApi = createApi({
@@ -27,10 +25,10 @@ export const shopApi = createApi({
       }),
     }),
     register: builder.mutation({
-      query: ({ name, email, password }) => ({
+      query: (userData ) => ({
         url: "/auth/signup",
         method: "POST",
-        body: { name, email, password },
+        body: userData,
       }),
     }),
 

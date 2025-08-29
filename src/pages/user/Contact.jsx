@@ -1,12 +1,6 @@
 import React from 'react';
 import bgImage from "../../assets/slider4.webp";
-import {
-  FaInstagram,
-  FaEnvelope,
-  FaPhone,
-  FaMapMarkerAlt,
-  FaClock
-} from 'react-icons/fa';
+import {FaInstagram, FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import { FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from 'react-icons/fa6';
 import bee from "../../assets/icon-footer.png"
@@ -14,16 +8,16 @@ import bee from "../../assets/icon-footer.png"
 const Contact = () => {
   return (
     <div>
-     <section
-          className="h-[400px] bg-cover bg-center -mt-30"
-          style={{ backgroundImage: `url(${bgImage})` }}
-        >
-          <div className="h-full flex justify-center items-center ">
-            <h1 className="text-[#3a1e0d] text-3xl font-medium tracking-wide uppercase">Contact Us</h1>
-                            <img src={bee} alt="" className='w-26' />
-            
-          </div>
-        </section>
+      <section
+        className="h-[400px] bg-cover bg-center -mt-30"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        <div className="h-full flex justify-center items-center ">
+          <h1 className="text-[#3a1e0d] text-3xl font-medium tracking-wide uppercase">Contact Us</h1>
+          <img src={bee} alt="" className='w-26' />
+
+        </div>
+      </section>
 
       <div className="max-w-screen-xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center space-y-5">
@@ -57,7 +51,7 @@ const Contact = () => {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 mt-10 flex flex-col md:flex-row gap-8 mb-9">
-      
+
 
         <iframe
           title="Google Maps location"
@@ -70,7 +64,7 @@ const Contact = () => {
           referrerPolicy="no-referrer-when-downgrade"
           className="w-full rounded-lg shadow-lg md:w-1/2"
         />
-          <div className="flex flex-col space-y-4  md:w-1/2 px-8">
+        <div className="flex flex-col space-y-4  md:w-1/2 px-8">
           <p className="flex items-start gap-2">
             <FaMapMarkerAlt className="text-[#3a1e0d]" size={18} />
             <span>123 Suspendis matti, Visaosang Building VST District, NY Accums, North American</span>

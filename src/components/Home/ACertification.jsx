@@ -15,8 +15,6 @@ const ACertification = () => {
     <div className="pt-16 sm:pt-20">
       <div className="max-w-[1500px] mx-auto px-10 sm:px-6">
         <div className="flex flex-col-reverse lg:flex-row items-center font-medium tracking-wide">
-          
-          {/* Şəkil */}
           <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
             <img
               src={img}
@@ -26,7 +24,6 @@ const ACertification = () => {
             />
           </div>
 
-          {/* Mətni */}
           <div className="w-full lg:w-1/2 pt-4 sm:pt-8 lg:pt-20">
             <div>
               <h6 className="text-[20px] sm:text-[24px] lg:text-[27px] font-semibold mb-2">
@@ -39,21 +36,8 @@ const ACertification = () => {
                 {t("certification.desc")}
               </p>
 
-              {/* Swiper */}
               <div>
-                <Swiper
-                  grabCursor={true}
-                  slidesPerView={1} // mobil default
-                  spaceBetween={10}
-                  modules={[Autoplay]}
-                  autoplay={{ delay: 1000 }}
-                  speed={2000}
-                  loop={true}
-                  breakpoints={{
-                    640: { slidesPerView: 2 },   // sm ekranlarda
-                    1024: { slidesPerView: 3 },  // lg ekranlarda
-                  }}
-                >
+                <Swiper grabCursor={true} slidesPerView={1} spaceBetween={10} modules={[Autoplay]} autoplay={{ delay: 1000 }} speed={2000} loop={true} breakpoints={{640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 },  }}>
                   {[brand1, brand2, brand3, brand1, brand2, brand3].map((brand, index) => (
                     <SwiperSlide key={index}>
                       <div className="w-full inline-block px-2 pb-6 sm:pb-8">

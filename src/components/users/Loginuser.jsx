@@ -4,26 +4,26 @@ import { useLoginMutation } from '../../store/shopApi';
 import { toast } from 'react-toastify';
 import { Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../context/Usercontext';
 
 const Loginuser = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [user, { isLoading }] = useLoginMutation();
+  const [login, { isLoading }] = useLoginMutation();
   const navigate = useNavigate();
+  const { loginUser } = useUser(); // context login funksiyası
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const user = await login({ email, password }).unwrap();
-      localStorage.setItem('user',  JSON.stringify(user.user));
-      localStorage.setItem('token',  user?.token);
 
+      loginUser(user.user);                // context-i yenilə
+      localStorage.setItem('token', user?.token); // token hələ localStorage-da qalır
 
       toast.success('Uğurla giriş edildi');
-      user?.user?.role == "admin" ? navigate('/admin/product') : navigate('/');
+      user?.user?.role === "admin" ? navigate('/admin/product') : navigate('/');
     } catch (error) {
-      console.log('Login error:', error);
-
       const errMessage = Array.isArray(error?.data?.message)
         ? error.data.message.join(', ')
         : error?.data?.message || "Giriş zamanı xəta baş verdi";
@@ -35,15 +35,12 @@ const Loginuser = () => {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="flex flex-col md:flex-row shadow-lg rounded-2xl overflow-hidden max-w-4xl w-full bg-yellow-50">
-        {/* Form */}
         <div className="w-full md:w-1/2 flex items-center justify-center p-8">
           <div className="w-full max-w-sm">
             <h2 className="text-3xl font-semibold text-center text-yellow-800 mb-6">Login</h2>
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium ">
-                  Email address
-                </label>
+                <label htmlFor="email" className="block text-sm font-medium ">Email address</label>
                 <input
                   type="email"
                   id="email"
@@ -56,9 +53,7 @@ const Loginuser = () => {
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-sm font-medium ">
-                  Password
-                </label>
+                <label htmlFor="password" className="block text-sm font-medium ">Password</label>
                 <input
                   type="password"
                   id="password"

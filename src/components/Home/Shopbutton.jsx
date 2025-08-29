@@ -12,9 +12,7 @@ const Shopbutton = () => {
         style={{ backgroundImage: `url(${slide4})` }}
         className="relative bg-cover bg-center bg-no-repeat xl:h-[680px] md:h-[550px] h-[420px] flex justify-center items-center"
       >
-        {/* Overlay */}
 <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.4)" }}></div>
-        {/* Content */}
         <div className="relative z-10 w-full max-w-[1200px] px-4 text-center">
           <div className="animate-fadeInUp space-y-4">
             <h4 className="text-white text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">

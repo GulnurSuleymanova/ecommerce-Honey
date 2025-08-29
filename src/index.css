@@ -1,24 +1,20 @@
 @import "tailwindcss";
-/* Light mode default */
 body {
   background-color: white;
   color: black;
 }
-
-/* Dark mode */body.dark-mode {
-  background-color: black; /* Tailwind dark:bg-gray-900 */
+body.dark-mode {
+  background-color: black;
   color: #ffffff;
 }
 footer.dark-mode {
-  background-color: black; /* Tailwind dark:bg-gray-900 */
+  background-color: black;
   color: #ffffff;
 }
 
-/* Button hover */
 button {
   transition: all 0.3s ease;
 }
-/* index.css */
 header {
   background-color: #FBF2E0;
   color: black;
@@ -31,11 +27,10 @@ header {
   background-color: rgb(69, 32, 2); 
 }
 body.dark-mode header {
-  background-color: rgb(45, 20, 0); /* qara */
+  background-color: rgb(45, 20, 0); 
   color: #ffffff;
 }
 
-/* Light mode default */
 .home-hero {
   background-image: url('../src/assets/slide4-1.webp');
   background-size: cover;
@@ -43,9 +38,8 @@ body.dark-mode header {
   background-repeat: no-repeat;
 }
 
-/* Dark mode */
 body.dark-mode .home-hero {
-  background-image: none; /* şəkli gizlədir */
+  background-image: none; 
   background-color: rgb(69, 32, 2); 
 }
 body.dark-mode{
@@ -56,7 +50,7 @@ body.dark-mode{
   
 }
 body.dark-mode .bgfooter {
-  background-image: none; /* şəkli gizlədir */
+  background-image: none; 
   background-color: rgb(69, 32, 2); 
 }
 .herohoney{

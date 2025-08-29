@@ -15,8 +15,8 @@ const About = () => {
       >
         <div className="h-full flex justify-center items-center ">
           <h1 className="text-[#3a1e0d] text-3xl font-medium tracking-wide uppercase">About Us</h1>
-                          <img src={bee} alt="" className='w-26' />
-          
+          <img src={bee} alt="" className='w-26' />
+
         </div>
       </section>
       <section className="bg-[#F1F1F1] rounded-3xl flex flex-row items-center justify-center gap-4 px-6 py-10 max-w-5xl mx-auto my-16 shadow-md text-center -mt-9">
@@ -42,7 +42,7 @@ const About = () => {
           <img src={gif1} alt="About us gif" className="" />
         </div>
       </section>
-<section className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-6 max-w-6xl mx-auto">
+      <section className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-6 max-w-6xl mx-auto">
         <div className="md:w-1/2">
           <img src={gif2} alt="About us gif" className="" />
         </div>

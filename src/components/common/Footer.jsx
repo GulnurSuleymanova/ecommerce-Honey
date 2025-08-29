@@ -49,32 +49,32 @@ const Footer = () => {
                 <img src={logo} alt="Logo" className="w-32 mb-4" />
                 <p className="text-sm text-center">{t("footer.10")}</p>
                 <div className="flex space-x-4 mt-10">
-               <div className="flex space-x-4 mt-10">
-  <a
-    href="https://www.instagram.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5B2800] text-white hover:bg-[#251c14]"
-  >
-    <FaInstagram />
-  </a>
-  <a
-    href="https://twitter.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5B2800] text-white hover:bg-[#251c14]"
-  >
-    <FaXTwitter />
-  </a>
-  <a
-    href="https://wa.me"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5B2800] text-white hover:bg-[#251c14]"
-  >
-    <FaWhatsapp />
-  </a>
-</div>
+                  <div className="flex space-x-4 mt-10">
+                    <a
+                      href="https://www.instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5B2800] text-white hover:bg-[#251c14]"
+                    >
+                      <FaInstagram />
+                    </a>
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5B2800] text-white hover:bg-[#251c14]"
+                    >
+                      <FaXTwitter />
+                    </a>
+                    <a
+                      href="https://wa.me"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5B2800] text-white hover:bg-[#251c14]"
+                    >
+                      <FaWhatsapp />
+                    </a>
+                  </div>
 
                 </div>
               </div>

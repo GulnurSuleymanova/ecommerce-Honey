@@ -19,13 +19,7 @@ const Testimonials = () => {
       <p className="text-[14px] sm:text-[16px] font-medium">{t("testimonials.sectionSubtitle")}</p>
       <h5 className="text-[20px] sm:text-[24px] font-semibold mb-10">{t("testimonials.sectionTitle")}</h5>
 
-      <Swiper
-        grabCursor
-        loop
-        autoplay={{ delay: 3000 }}
-        speed={1000}
-        modules={[Autoplay]}
-        breakpoints={{
+      <Swiper grabCursor loop autoplay={{ delay: 3000 }}  speed={1000}  modules={[Autoplay]}  breakpoints={{
           0: {
             slidesPerView: 1,
             spaceBetween: 10,

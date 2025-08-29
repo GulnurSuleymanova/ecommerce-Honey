@@ -1,5 +1,3 @@
-// src/components/ScrollToTop.jsx
-import React from 'react';
 
 const ScrollToTop = () => {
   const handleScrollTop = () => {

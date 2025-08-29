@@ -10,16 +10,13 @@ const WhyChooseUs = () => {
   return (
     <div className="pt-16 sm:pt-24 md:pt-20">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
-        {/* Başlıq */}
         <div className="text-center mb-6">
           <p className="text-[14px] sm:text-[16px] font-medium tracking-wide">{t("whoose.0")}</p>
           <h5 className="text-[20px] sm:text-[24px] md:text-[32px] font-medium tracking-wide">{t("whoose.1")}</h5>
         </div>
 
-        {/* Kartlar */}
         <div className="flex flex-col md:flex-row md:justify-center md:gap-6 lg:gap-12 gap-6 pt-3 items-center">
 
-          {/* Kart 1 */}
           <div className="relative group w-full max-w-[280px] sm:max-w-sm md:max-w-md">
             <div className="absolute -top-2 -right-3 w-full h-full bg-[#F9BD17] rounded-tl-[60px] rounded-br-[60px] z-0"></div>
             <div className="absolute -top-[6px] -left-[15px] w-[calc(100%+20px)] h-[calc(100%+20px)] border border-dashed border-black rounded-tl-[60px] rounded-br-[60px] z-[-1]"></div>
@@ -36,7 +33,6 @@ const WhyChooseUs = () => {
             </div>
           </div>
 
-          {/* Kart 2 */}
           <div className="relative group w-full max-w-[280px] sm:max-w-sm md:max-w-md">
             <div className="absolute -top-2 -right-3 w-full h-full bg-[#F9BD17] rounded-tl-[60px] rounded-br-[60px] z-0"></div>
             <div className="absolute -top-[6px] -left-[15px] w-[calc(100%+20px)] h-[calc(100%+20px)] border border-dashed border-black rounded-tl-[60px] rounded-br-[60px] z-[-1]"></div>
@@ -53,7 +49,6 @@ const WhyChooseUs = () => {
             </div>
           </div>
 
-          {/* Kart 3 */}
           <div className="relative group w-full max-w-[280px] sm:max-w-sm md:max-w-md">
             <div className="absolute -top-2 -right-3 w-full h-full bg-[#F9BD17] rounded-tl-[60px] rounded-br-[60px] z-0"></div>
             <div className="absolute -top-[6px] -left-[15px] w-[calc(100%+20px)] h-[calc(100%+20px)] border border-dashed border-black rounded-tl-[60px] rounded-br-[60px] z-[-1]"></div>

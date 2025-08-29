@@ -16,7 +16,7 @@ const Wishlist = () => {
   }
 
   const handleAddtocardClick = (e, product) => {
-    e.stopPropagation(); // prevent navigation to details when clicking add to cart
+    e.stopPropagation(); 
 
     const isInAddtocard = addtocard.some((item) => item.id === product.id);
     if (!isInAddtocard) {

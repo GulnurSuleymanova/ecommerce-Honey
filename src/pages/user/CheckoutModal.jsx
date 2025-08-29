@@ -12,7 +12,7 @@ const CheckoutModal = ({ isOpen, onClose }) => {
           &times;
         </button>
         <p><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2lrdTVoYnJ0bXl3amUzbnIxbHZ6YTUzcHNpc2ZjcXJsbnQ2MWR5byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZMdKF6a1iNuTPmUSlu/giphy.gif" alt="" /></p>
-      
+
       </div>
     </div>
   );

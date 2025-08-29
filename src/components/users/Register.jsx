@@ -12,7 +12,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
-  const [gender, setGender] = useState('male'); // default
+  const [gender, setGender] = useState('male'); 
 
   const [register, { isLoading }] = useRegisterMutation();
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const Register = () => {
       lastName: lastName.trim(),
       email: email.trim(),
       password,
-      dateOfBirth: new Date(dateOfBirth).toISOString(), // ✅ ISO format
+      dateOfBirth: new Date(dateOfBirth).toISOString(), 
       gender,
     };
 
@@ -44,7 +44,7 @@ const Register = () => {
       localStorage.setItem('token', user.token);
 
       toast.success('Successfully registered!');
-      navigate('/login');
+      navigate('/loginuser');
     } catch (err) {
       console.error("Register error:", err);
 
@@ -59,12 +59,11 @@ const Register = () => {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="flex flex-col md:flex-row shadow-lg rounded-2xl overflow-hidden max-w-4xl w-full bg-yellow-50">
-        
-        {/* Form */}
+
         <div className="w-full md:w-1/2 flex items-center justify-center p-8">
           <div className="w-full max-w-sm">
             <h2 className="text-3xl font-semibold text-center text-yellow-800 mb-6">Register</h2>
-            
+
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-sm font-medium">First Name</label>
@@ -162,7 +161,6 @@ const Register = () => {
           </div>
         </div>
 
-        {/* Image */}
         <div className="md:w-1/2 hidden md:block">
           <img src={honey} alt="Register Visual" className="h-full w-full object-cover" />
         </div>

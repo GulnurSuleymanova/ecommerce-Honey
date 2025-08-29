@@ -13,7 +13,7 @@ const Product = () => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
         await deleteProduct(id).unwrap();
-        refetch(); // siyahını yenilə
+        refetch(); 
       } catch (error) {
         console.error("Delete failed:", error);
       }

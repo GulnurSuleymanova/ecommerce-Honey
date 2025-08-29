@@ -63,7 +63,7 @@ const Details = () => {
           <h1 className="text-[#3a1e0d] text-3xl font-medium tracking-wide uppercase">
             Details
           </h1>
-                      <img src={bee} alt="" className='w-26' />
+          <img src={bee} alt="" className='w-26' />
         </div>
       </section>
 
@@ -81,7 +81,6 @@ const Details = () => {
           <p className="text-center text-red-500 text-lg">Product not found.</p>
         ) : (
           <div className="flex flex-col md:flex-row gap-10">
-            {/* Şəkil və Zoom */}
             <div className="flex-1 bg-white rounded-3xl shadow-lg p-6 flex flex-col justify-center items-center relative">
               <ReactImageMagnify
                 {...{
@@ -95,7 +94,7 @@ const Details = () => {
                     width: 2000,
                     height: 1000,
                   },
-                  enlargedImagePosition: "beside", // Kənarda göstər
+                  enlargedImagePosition: "beside", 
                   enlargedImageContainerStyle: {
                     background: "#fff",
                     borderRadius: "12px",
@@ -105,7 +104,6 @@ const Details = () => {
                 }}
               />
 
-              {/* Wishlist button */}
               <div
                 className="absolute top-4 right-4 w-11 h-11 bg-amber-50/95 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer"
                 onClick={(e) => handleWishlistClick(e, item)}
@@ -113,28 +111,26 @@ const Details = () => {
               >
                 <Heart
                   className={`w-5 h-5 transition-all duration-200 ${wishlist.some((i) => i.id === item.id)
-                      ? "text-red-500 fill-red-500"
-                      : "text-amber-700 hover:text-red-500 hover:fill-red-500"
+                    ? "text-red-500 fill-red-500"
+                    : "text-amber-700 hover:text-red-500 hover:fill-red-500"
                     }`}
                 />
               </div>
 
-              {/* Thumbnail images */}
-              <div className="flex gap-2 mt-4">
-                {item.images?.map((img, index) => (
-                  <img
-                    key={index}
-                    src={img.url}
-                    alt={`${item.name}-${index}`}
-                    className={`w-20 h-20 object-cover rounded-lg cursor-pointer border-2 ${selectedImage === img.url ? "border-amber-600" : "border-transparent"
-                      }`}
-                    onClick={() => setSelectedImage(img.url)}
-                  />
-                ))}
-              </div>
+             <div className="flex gap-2 mt-4">
+  {item.images?.map((img, index) => (
+    <img
+      key={index}
+      src={img.url}
+      alt={`${item.name}-${index}`}
+      className={`w-20 h-20 object-cover rounded-lg cursor-pointer border-2 ${selectedImage === img.url ? "border-amber-600" : "border-transparent"}`}
+      onClick={() => setSelectedImage(img.url)}
+    />
+  ))}
+</div>
+
             </div>
 
-            {/* Məhsul məlumatları */}
             <div className="flex-1 flex flex-col justify-between">
               <div className="p-6 rounded-lg space-y-6 mb-4">
                 <h1 className="text-4xl font-extrabold mb-4 text-amber-600">{item.name}</h1>

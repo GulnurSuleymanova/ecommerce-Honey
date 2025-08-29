@@ -56,7 +56,7 @@ const Category = () => {
           onClick={handleOpenAdd}
           className="px-6 py-3 bg-gradient-to-r from-amber-400 to-orange-400 text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:from-amber-500 hover:to-orange-500 transition-all duration-300"
         >
-           Add New Category
+          Add New Category
         </button>
       </div>
 
