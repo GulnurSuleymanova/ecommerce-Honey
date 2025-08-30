@@ -94,7 +94,7 @@ const Details = () => {
                     width: 2000,
                     height: 1000,
                   },
-                  enlargedImagePosition: "beside", 
+                  enlargedImagePosition: "beside",
                   enlargedImageContainerStyle: {
                     background: "#fff",
                     borderRadius: "12px",
@@ -117,17 +117,17 @@ const Details = () => {
                 />
               </div>
 
-             <div className="flex gap-2 mt-4">
-  {item.images?.map((img, index) => (
-    <img
-      key={index}
-      src={img.url}
-      alt={`${item.name}-${index}`}
-      className={`w-20 h-20 object-cover rounded-lg cursor-pointer border-2 ${selectedImage === img.url ? "border-amber-600" : "border-transparent"}`}
-      onClick={() => setSelectedImage(img.url)}
-    />
-  ))}
-</div>
+              <div className="flex gap-2 mt-4">
+                {item.images?.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img.url}
+                    alt={`${item.name}-${index}`}
+                    className={`w-20 h-20 object-cover rounded-lg cursor-pointer border-2 ${selectedImage === img.url ? "border-amber-600" : "border-transparent"}`}
+                    onClick={() => setSelectedImage(img.url)}
+                  />
+                ))}
+              </div>
 
             </div>
 

@@ -1,4 +1,3 @@
-
 const ScrollToTop = () => {
   const handleScrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -7,7 +6,7 @@ const ScrollToTop = () => {
   return (
     <div
       onClick={handleScrollTop}
-      className="scroll-to-top fixed z-50 cursor-pointer bottom-5 right-5 p-3 bg-amber-500 rounded-full shadow-lg hover:bg-amber-600 transition"
+      className="scroll-to-top hidden md:flex fixed z-50 cursor-pointer bottom-5 right-5 p-3 bg-amber-500 rounded-full shadow-lg hover:bg-amber-600 transition"
       title="Scroll to top"
     >
       <span className="block w-5 h-5 border-l-2 border-t-2 border-white transform rotate-45"></span>
