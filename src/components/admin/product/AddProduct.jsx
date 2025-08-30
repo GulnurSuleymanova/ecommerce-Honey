@@ -48,7 +48,7 @@ const AddProduct = ({ setOpen }) => {
 
   const handleProduct = async () => {
     if (!name || !description || !price || !stock || !brandId || !categoryId || !slug) {
-      return toast.error("Zəhmət olmasa bütün sahələri doldurun.");
+      return toast.error("Please fill in all fields.");
     }
     try {
       await addProduct({
@@ -64,10 +64,10 @@ const AddProduct = ({ setOpen }) => {
         colors: selectedColor,
       }).unwrap();
 
-      toast.success("Məhsul uğurla əlavə edildi");
+      toast.success("Product added successfully");
       setOpen(false);
     } catch (error) {
-      toast.error("Məhsul əlavə edilmədi, xahiş olunur məlumatları yoxlayın.");
+      toast.error("Failed to add product, please check the information.");
       console.error(error);
     }
   };

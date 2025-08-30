@@ -33,9 +33,9 @@ const Details = () => {
     const isInAddtocard = addtocard.some((i) => i.id === product.id);
     if (!isInAddtocard) {
       toggleAddtocard(product);
-      toast.success(`"${product.name}" səbətə əlavə olundu.`);
+      toast.success(`"${product.name}" added to cart`);
     } else {
-      toast.info(`"${product.name}" artıq səbətdədir.`);
+      toast.info(`"${product.name}" already in cart`);
     }
   };
 
@@ -44,9 +44,9 @@ const Details = () => {
     const isInWishlist = wishlist.some((i) => i.id === product.id);
     toggleWishlist(product);
     if (!isInWishlist) {
-      toast.success(`"${product.name}" wishliste əlavə olundu.`);
+      toast.success(`"${product.name}" added to wishlist`);
     } else {
-      toast.info(`"${product.name}" wishlistdən silindi.`);
+      toast.info(`"${product.name}" removed from wishlist`);
     }
   };
 

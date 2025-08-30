@@ -33,7 +33,7 @@ const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
 
-  const [isFilterOpen, setIsFilterOpen] = useState(false); // mobil ofcanvas üçün
+  const [isFilterOpen, setIsFilterOpen] = useState(false); 
 
   const navigate = useNavigate();
 
@@ -73,9 +73,9 @@ const Shop = () => {
     const isInWishlist = wishlist.some((item) => item.id === product.id);
     toggleWishlist(product);
     if (!isInWishlist) {
-      toast.success(`"${product.name}" wishliste əlavə olundu.`);
+      toast.success(`"${product.name}" added to wishlist`);
     } else {
-      toast(`"${product.name}" wishlistdən silindi.`);
+      toast(`"${product.name}" removed from wishlist`);
     }
   };
 
@@ -84,13 +84,12 @@ const Shop = () => {
     const isInAddtocard = addtocard.some((item) => item.id === product.id);
     toggleAddtocard(product);
     if (!isInAddtocard) {
-      toast.success(`"${product.name}" Addtocarde əlavə olundu.`);
+      toast.success(`"${product.name}" added to cart`);
     } else {
-      toast(`"${product.name}" Addtocarddən silindi.`);
+      toast(`"${product.name}" removed from cart`);
     }
   };
 
-  // Filter edilmiş məhsullar
   const filteredProducts = productData.filter(({ category, sizes = [], colors = [], price, name }) => {
     const priceValue = Number(price) || 0;
     const minPrice = selectedPrice.min !== "" ? Number(selectedPrice.min) : null;
@@ -108,7 +107,6 @@ const Shop = () => {
     );
   });
 
-  // Sort edilmiş məhsullar
   const sortedProducts = [...filteredProducts];
   if (sortType === "name-asc") {
     sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
@@ -120,7 +118,6 @@ const Shop = () => {
     sortedProducts.sort((a, b) => b.price - a.price);
   }
 
-  // Pagination
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = sortedProducts.slice(indexOfFirstProduct, indexOfLastProduct);
@@ -128,7 +125,6 @@ const Shop = () => {
 
   return (
     <>
-      {/* Banner */}
       <section
         className="h-[400px] bg-cover bg-center -mt-30"
         style={{ backgroundImage: `url(${bgImage})` }}
@@ -140,7 +136,6 @@ const Shop = () => {
         </div>
       </section>
 
-      {/* Categories mini slider */}
       <section className="flex justify-center items-center gap-4 sm:gap-6 py-12 -mt-30 flex-wrap">
         {[shopslider1, shopslider2, shopslider3, shopslider4, shopslider5, shopslider6].map(
           (img, index) => (
@@ -156,7 +151,6 @@ const Shop = () => {
 
       <section className="flex flex-col lg:flex-row px-4 lg:px-20">
 
-        {/* ---- Mobil Filter Aç düyməsi ---- */}
         <div className="flex justify-center lg:hidden mb-4 pb-7">
           <button
             onClick={() => setIsFilterOpen(true)}
@@ -167,7 +161,6 @@ const Shop = () => {
         </div>
 
 
-        {/* ---- Filter Paneli (desktopda görünür, mobil ofcanvas) ---- */}
         <div
           className={`shop_filters w-full lg:w-1/6 mb-6 lg:mb-0 
             fixed top-0 left-0 h-full bg-white shadow-xl transform transition-transform z-50 
@@ -342,7 +335,6 @@ const Shop = () => {
           </div>
         </div>
 
-        {/* Products */}
         <div className="w-full lg:w-5/6">
           <div className="hidden lg:block">
             <ShopFilterBar
@@ -392,7 +384,6 @@ const Shop = () => {
                     ))}
                   </div>
 
-                  {/* Pagination */}
                   <div className="flex flex-wrap justify-center items-center gap-2 mt-4 sm:gap-3 sm:mt-6">
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                       <button

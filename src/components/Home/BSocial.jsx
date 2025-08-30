@@ -23,9 +23,14 @@ const BSocial = () => {
               alt="gallery1"
               className="w-full transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-500 flex items-center justify-center text-white text-[40px] opacity-0 group-hover:opacity-100">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-500 flex items-center justify-center text-white text-[40px] opacity-0 group-hover:opacity-100"
+            >
               <FaInstagram />
-            </div>
+            </a>
           </div>
 
           <div className="text-center w-full lg:w-1/2">
@@ -43,9 +48,15 @@ const BSocial = () => {
               alt="gallery2"
               className="w-full transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-500 flex items-center justify-center text-white text-[40px] opacity-0 group-hover:opacity-100">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-500 flex items-center justify-center text-white text-[40px] opacity-0 group-hover:opacity-100"
+            >
               <FaInstagram />
-            </div>
+            </a>
+
           </div>
         </div>
 
@@ -60,9 +71,15 @@ const BSocial = () => {
                 alt={`gallery${idx + 3}`}
                 className="w-full transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-500 flex items-center justify-center text-white text-[40px] opacity-0 group-hover:opacity-100">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-500 flex items-center justify-center text-white text-[40px] opacity-0 group-hover:opacity-100"
+              >
                 <FaInstagram />
-              </div>
+              </a>
+
             </div>
           ))}
         </div>

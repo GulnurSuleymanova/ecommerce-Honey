@@ -20,7 +20,7 @@ const AddCategory = ({ setOpen }) => {
             setSlug('')
             setOpen(false)
         } catch (error) {
-            const errMsg = error?.data?.message || error?.error || "Xəta baş verdi";
+            const errMsg = error?.data?.message || error?.error || "An error occurred";
             toast.error(errMsg)
         }
     }

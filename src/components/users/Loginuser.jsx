@@ -11,22 +11,22 @@ const Loginuser = () => {
   const [password, setPassword] = useState('');
   const [login, { isLoading }] = useLoginMutation();
   const navigate = useNavigate();
-  const { loginUser } = useUser(); // context login funksiyası
+  const { loginUser } = useUser();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const user = await login({ email, password }).unwrap();
 
-      loginUser(user.user);                // context-i yenilə
-      localStorage.setItem('token', user?.token); // token hələ localStorage-da qalır
+      loginUser(user.user);
+      localStorage.setItem('token', user?.token);
 
-      toast.success('Uğurla giriş edildi');
+      toast.success('Login successful');
       user?.user?.role === "admin" ? navigate('/admin/product') : navigate('/');
     } catch (error) {
       const errMessage = Array.isArray(error?.data?.message)
         ? error.data.message.join(', ')
-        : error?.data?.message || "Giriş zamanı xəta baş verdi";
+        : error?.data?.message || "An error occurred during login";
 
       toast.error(errMessage);
     }

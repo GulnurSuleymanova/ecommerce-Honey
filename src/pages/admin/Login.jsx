@@ -19,7 +19,7 @@ const Login = () => {
       localStorage.setItem('token',  user?.token);
 
 
-      toast.success('Uğurla giriş edildi');
+      toast.success('Login successful');
       user?.user?.role == "admin" ? navigate('/admin/product') : navigate('/');
     } catch (error) {
       console.log('Login error:', error);
